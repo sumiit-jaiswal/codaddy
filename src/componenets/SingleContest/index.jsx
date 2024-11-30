@@ -62,7 +62,7 @@ const SingleContest = () => {
                   className="problem-name"
                   onClick={() =>
                     window.open(
-                      `/problem/${id}/${question.index}`,
+                      `${window.location.origin}/problem/${id}/${question.index}`,
                       "_blank",
                       "noopener,noreferrer"
                     )

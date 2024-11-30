@@ -17,7 +17,7 @@ const ProblemPage = () => {
         setLoading(true);
         const contestsData = await fetchFinishedContests();
         setContests(contestsData);
-  
+
         // Load problems for the contests on the current page
         loadProblemsForPage(contestsData, currentPage);
       } catch (error) {
@@ -26,7 +26,7 @@ const ProblemPage = () => {
         setLoading(false);
       }
     };
-  
+
     loadContests();
   }, [currentPage]);
 
@@ -34,7 +34,10 @@ const ProblemPage = () => {
   const loadProblemsForPage = async (contestsData, page) => {
     const contestsPerPage = 3; // Since we want 4 pages in the middle
     const startIndex = (page - 1) * contestsPerPage;
-    const selectedContests = contestsData.slice(startIndex, startIndex + contestsPerPage);
+    const selectedContests = contestsData.slice(
+      startIndex,
+      startIndex + contestsPerPage
+    );
 
     const problems = await Promise.all(
       selectedContests.map(async (contest) => {
@@ -91,19 +94,22 @@ const ProblemPage = () => {
             <span className="problem-id">
               {problem.contestId + problem.index}
             </span>
-            <div className="problem-name" onClick={() =>
-                    window.open(
-                      `/problem/${problem.contestId}/${problem.index}`,
-                      "_blank",
-                      "noopener,noreferrer"
-                    )
-                  }>
-
-                {problem.name}
-
+            <div
+              className="problem-name"
+              onClick={() =>
+                window.open(
+                  `${window.location.origin}/problem/${problem.contestId}/${problem.index}`,
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
+              {problem.name}
             </div>
             <span className="problem-difficulty">
-              {isNaN(problem.rating) || problem.rating === undefined || problem.rating === null
+              {isNaN(problem.rating) ||
+              problem.rating === undefined ||
+              problem.rating === null
                 ? "NA"
                 : problem.rating}
             </span>

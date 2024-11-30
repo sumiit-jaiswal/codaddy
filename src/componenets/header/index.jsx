@@ -15,7 +15,7 @@ const Header = () => {
         <Link
           to="#"
           className="nav-link"
-          onClick={() => window.open("/ide", "_blank", "noopener,noreferrer")}
+          onClick={() => window.open(`${window.location.origin}/ide`, "_blank", "noopener,noreferrer")}
         >
           Code Editor
         </Link>

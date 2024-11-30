@@ -15,14 +15,19 @@ const Home = () => {
           </p>
           <p>All in One Solution for codeforces problem solving</p>
           <div className="hero-buttons">
-            <a
-              href="/ide"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="#"
+              onClick={() =>
+                window.open(
+                  `${window.location.origin}/ide`,
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
               className="btn primary"
             >
               Code Editor
-            </a>
+            </Link>
             <Link to="/contests" className="btn secondary">
               Explore Contests
             </Link>
@@ -30,7 +35,6 @@ const Home = () => {
               Browse Problems
             </Link>
           </div>
-          
         </div>
       </section>
 
@@ -61,7 +65,10 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <p>Note: currently we have not implemented the feature to get the question from live contest but it will be implemented soon</p>
+        <p>
+          Note: currently we have not implemented the feature to get the
+          question from live contest but it will be implemented soon
+        </p>
       </section>
 
       {/* Recent Contests Section
