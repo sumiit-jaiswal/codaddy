@@ -1,0 +1,43 @@
+.footer {
+    background-color: #1e1e2f; /* Dark background */
+    color: #ffffff; /* White text */
+    padding: 20px 40px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .footer-text {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px; /* Adds space between the text and the link */
+  }
+  
+  .developer-name {
+    font-weight: 600;
+  }
+  
+  .linkedin-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #1976d2; /* Blue color for LinkedIn */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .linkedin-link:hover {
+    color: #0a58ca; /* Darker blue on hover */
+  }
+  
+  .linkedin-icon {
+    margin-bottom: 10px;
+    font-size: 32px; /* Adjust the size of the icon */
+  }
+  
+  .linkedin-link:hover .linkedin-icon {
+    color: #0a58ca; /* Darker blue when hovered */
+  }
+  

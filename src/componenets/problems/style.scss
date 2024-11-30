@@ -1,0 +1,100 @@
+.problem-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #121212;
+
+  .problem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .problem-header {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    background-color: #1e1e1e;
+    font-weight: bold;
+    text-align: left;
+    color: #e0e0e0;
+    border-bottom: 2px solid #333;
+  }
+
+  .problem-row {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding: 12px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1.1em;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      background-color: #242424;
+    }
+  }
+
+  .problem-id,
+  .problem-name,
+  .problem-difficulty {
+    text-align: left;
+    color: #e0e0e0;
+  }
+
+  .problem-name {
+    margin-left: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #81c784;
+    font-weight: bold;
+    transition: color 0.2s ease;
+
+    &:hover {
+      text-decoration: underline;
+      color: #4caf50;
+    }
+  }
+
+  .problem-difficulty {
+    text-align: left;
+  }
+
+  .pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .page-button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #e0e0e0;
+    transition: all 0.2s ease;
+
+    &.active {
+      background-color: #4caf50;
+      color: white;
+      border-color: #4caf50;
+    }
+
+    &:hover {
+      background-color: #2c2c2c;
+      border-color: #4caf50;
+    }
+  }
+
+  .error {
+    color: #ff6b6b;
+    text-align: center;
+    font-size: 1.2em;
+  }
+}

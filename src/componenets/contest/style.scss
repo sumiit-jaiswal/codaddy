@@ -1,0 +1,77 @@
+.contest-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #121212;
+
+  h1 {
+    text-align: center;
+    color: #e0e0e0;
+  }
+
+  section {
+    margin-top: 30px;
+
+    h2 {
+      color: #b0b0b0;
+      margin-bottom: 15px;
+    }
+  }
+
+  .contest-table {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contest-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1fr;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    &.upcoming {
+      border-left: 5px solid #4caf50;
+      background: linear-gradient(90deg, rgba(76, 175, 80, 0.1) 0%, rgba(30, 30, 30, 1) 100%);
+    }
+
+    &.past {
+      border-left: 5px solid #f44336;
+      background: linear-gradient(90deg, rgba(244, 67, 54, 0.1) 0%, rgba(30, 30, 30, 1) 100%);
+    }
+  }
+
+  .contest-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #e0e0e0;
+
+    a {
+      text-decoration: none;
+      color: #81c784;
+      transition: color 0.2s ease;
+
+      &:hover {
+        text-decoration: underline;
+        color: #4caf50;
+      }
+    }
+  }
+
+  .contest-duration,
+  .contest-start,
+  .contest-timer {
+    text-align: center;
+    font-size: 0.95em;
+    color: #b0b0b0;
+  }
+}
