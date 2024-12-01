@@ -22,13 +22,27 @@
   z-index: 1001;
   
   .nav-link {
-    // Override default nav-link hover effects for logo
-    &:hover {
+    // Override all nav-link effects for logo
+    &:hover, &:focus {
       background-color: transparent !important;
+      box-shadow: none !important;
     }
 
+    // Adjust the underline effect for logo
     &::after {
-      bottom: -5px; // Adjust the underline position for logo
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: rgb(41, 140, 140);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    &:hover::after {
+      width: 70%;
     }
   }
   
@@ -44,6 +58,7 @@
     }
   }
 }
+
 
 .nav-links {
   display: flex;
