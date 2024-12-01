@@ -1,92 +1,113 @@
 .home {  
-    .hero {
-      background: linear-gradient(to right, #4caf50, #81c784);
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-  
-      .hero-content {
-        max-width: 800px;
-        margin: auto;
-  
-        h1 {
-          font-size: 2.5rem;
-          margin-bottom: 20px;
-        }
-  
-        p {
-          font-size: 1.2rem;
-          margin-bottom: 30px;
-        }
-  
-        .hero-buttons {
-          .btn {
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-  
-            &.primary {
-              background: white;
-              color: #4caf50;
-  
-              &:hover {
-                background: #e8f5e9;
-              }
-            }
-  
-            &.secondary {
-              background: #81c784;
-              color: white;
-  
-              &:hover {
-                background: #538155;
-              }
-            }
-          }
-        }
-      }
-    }
-  
-    .features {
-      text-align: center;
-      padding: 50px 20px;
-      
-      h2 {
-        font-size: 2rem;
+  .hero {
+    background: linear-gradient(to right, #4caf50, #81c784);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+
+    .hero-content {
+      max-width: 800px;
+      margin: auto;
+
+      h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
         margin-bottom: 20px;
-        color: #e0e0e0;
       }
-  
-      .feature-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-  
-        .feature {
-          background: #1e1e1e;
-          padding: 20px;
-          border-radius: 8px;
-          border: 1px solid #333;
-          transition: transform 0.3s;
-  
-          &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+      p {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        margin-bottom: 30px;
+        padding: 0 15px;
+      }
+
+      .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        
+        .btn {
+          text-decoration: none;
+          padding: 10px 20px;
+          margin: 0 5px;
+          border-radius: 5px;
+          font-weight: bold;
+          transition: background 0.3s;
+          
+          @media (max-width: 480px) {
+            width: 80%;
+            margin: 5px 0;
           }
-  
-          h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #e0e0e0;
+
+          &.primary {
+            background: white;
+            color: #4caf50;
+
+            &:hover {
+              background: #e8f5e9;
+            }
           }
-  
-          p {
-            color: #b0b0b0;
+
+          &.secondary {
+            background: #81c784;
+            color: white;
+
+            &:hover {
+              background: #538155;
+            }
           }
         }
       }
     }
+  }
+
+  .features {
+    text-align: center;
+    padding: 50px 20px;
+    
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 20px;
+      color: #e0e0e0;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 15px;
+      
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      
+      @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h3 {
+          font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+          margin-bottom: 10px;
+          color: #e0e0e0;
+        }
+
+        p {
+          color: #b0b0b0;
+          font-size: clamp(0.9rem, 1.5vw, 1rem);
+        }
+      }
+    }
+  }
 }
