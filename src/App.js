@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { useEffect } from 'react'; // Add this import
 import './app.scss';
-
+import { warmUpServer } from './utils/serverWarmup'; // Ensure this import is present
 import Header from './componenets/header';
 import Home from './componenets/homepage/';
 import Ide from './componenets/ide';
@@ -20,6 +21,7 @@ const FooterWrapper = () => {
 
   return <Footer />;
 };
+
 const HeaderWrapper = () => {
   const location = useLocation();
   // Hide footer if the current path matches the SingleQuestion route pattern
@@ -31,8 +33,19 @@ const HeaderWrapper = () => {
 };
 
 const App = () => {
+  useEffect(() => {
+    // Warm up server on initial app load
+    warmUpServer();
+
+    // Optional: Set up periodic warm-up
+    const intervalId = setInterval(warmUpServer, 25 * 60 * 1000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []); // Empty dependency array ensures this runs once on mount
+
   return (
-    <Router future={{ 
+    <Router future={{
       v7_startTransition: true,
       v7_relativeSplatPath: true
     }}>
